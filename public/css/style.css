@@ -1,37 +1,279 @@
 body {
     padding-top: 60px;
     padding-bottom: 40px;
-}
-
-.zf-green {
-    color: #68b604;
-}
-
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
-}
-
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
-}
-
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
+    font-size: 12pt;
 }
 
 div.container a.brand {
     background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
     margin-left: 0;
     padding: 8px 20px 12px 40px;
+}
+
+/*.container{*/
+    /*margin-left: inherit;*/
+    /*margin-right: inherit;*/
+    /*padding: 0;*/
+    /*width: 100%;*/
+
+/*}*/
+/*.navbar .container {*/
+    /*padding-left: 1em;*/
+    /*padding-right: 1em;*/
+/*}*/
+
+
+body {
+    background: #0b1369;
+    color: #EEEEEE;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+/*.simple .title {*/
+    /*font-size: 3em;*/
+
+/*}*/
+/*.simple .sub-title {*/
+    /*font-size: 1.5em;*/
+/*}*/
+/*.simple .divider {*/
+    /*min-height: 50px;*/
+/*}*/
+/*.simple {*/
+    /*padding: 0;*/
+/*}*/
+/*.simple .section-content {*/
+    /*padding: 1em;*/
+    /*max-width: 25em;*/
+    /*text-align: center;*/
+    /*position: relative;*/
+/*}*/
+
+
+
+
+
+#section-easy {
+    background: #0196ec;
+}
+#section-confidence {
+    background: #1d73ab;
+}
+#section-convenient {
+    background: #357c8d;
+}
+#section-service {
+    background: #015f63;
+}
+section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+#section-lifecycle {
+
+}
+.column-block {
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.column-1, .column-3 {
+    margin-top: 2em;
+}
+#column-1-item-2,
+#column-2-item-1 {
+    background-color: #cbe29a;
+    color: black;
+}
+#column-1-item-1,
+.column-3 .column-block {
+    background-color: #b3deff;
+    color: black;
+}
+#column-2-item-2 {
+    background-color: #ebebeb;
+    color: black;
+}
+
+#order-choice {
+    background: white;
+    color: black;
+}
+.choice-item {
+    display: inline-block;
+}
+
+#limited-time-block {
+    border: 1px solid #015f63;
+    padding: 1em;
+}
+
+#limited-time-block .title {
+    margin-top: -1.8em;
+    display: block;
+    background: white;
+}
+#limited-time-block strong {
+    color: #439a03;
+    font-weight: bold;
+}
+#limited-time-block strong.very-strong {
+    font-size: 45px;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+}
+
+.fine-print {
+    margin-top: 3em;
+    font-size: 0.8em;
+}
+
+#order-screen {
+    padding: 1em;
+}
+
+select.form-control {
+    padding-left: 6px;
+    padding-right: 9px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+#overview-subscription-type {
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#overview-breakdown {
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+#overview-subscription,
+#overview-sensor {
+    border-right: 1px solid #888888;
+}
+
+.summary-xxl { font-size: 4em; }
+.summary-large { font-size: 2.5em; }
+.summary-medium { font-size: 1.5em; }
+.summary-small { font-size: 1.3em; }
+.summary-xs { font-size: 1.0em; }
+
+.dollar-sign {
+    display: inline-block;
+    font-size: 1.3em;
+    padding-top: 0.5em;
+    vertical-align: top;
+}
+#promo-add {
+    display: inline-block;
+    line-height: 1.1;
+    padding-top: 1.0em;
+}
+#order-total-dollar {
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 0.25em;
+}
+#order-submit-button {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.8em 1.0em;
+    margin-top: 1.5em;
+}
+#overview-delivery {
+    font-size: 1.3em;
+    margin-top: 2em;
+}
+#overview-fine-print {
+    font-size: 0.9em;
+    margin-top: 3em;
+}
+
+.pull-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.pull-center.col-md-5 {
+    width: 40%;
+}
+.pull-center.col-md-7 {
+    width: 57%;
+}
+
+/**
+ * Order Choice Section
+ */
+#order-choice h3 {
+    margin-top: 10px;
+}
+
+.choice-header {
+    margin-top: 25px;
+    border-bottom: 1px solid #1d73ab;
+}
+.choice-item input {
+    visibility: hidden;
+}
+.choice-item label {
+    font-size: 25px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.pricing-section label {
+    cursor: pointer;
+}
+.pricing-section .row {
+    margin-top: 1em;
+}
+
+.pricing-section .price-sensor {
+    border-right: 1px solid #888888;
+}
+.pricing-section .subscription-yearly strong {
+    color: #558855;
+}
+.pricing-section strong { font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pricing-section .price-per-month {
+    font-size: 20px;
+}
+.pricing-section .price-dollar {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    padding-top: 10px;
+}
+#limited-time-block .promo {
+    font-size: 22px;
+}
+.choice-item.checked label {
+    border-bottom: 3px solid #1d73ab;
+}
+#place-order-button {
+    background-color: #1d73ab;
+    color: white;
+    padding: 0.5em 0.8em;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/**
+ * Lifecycle
+ */
+
+#section-lifecycle .title {
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
 }

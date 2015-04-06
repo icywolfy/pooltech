@@ -1,0 +1,594 @@
+<?php
+////////////////////////////////////////////////////////////////////////
+//  LEFT-RIGHT TEXT
+//
+
+$sections = array();
+$sections['easy'] = array(
+  'title' => 'easy',
+  'subtitle' => 'monitors your water quality 24/7',
+  'description' => 'Notifies you on your smartphone when you need to add chemicals and ships you pre-measured doses of chemicals when you need them.',
+  '#divider-class' => 'icon-bulb',
+  '#section-id' => 'section-easy',
+);
+$sections['confidence'] = array(
+  'title' => 'confidence',
+  'subtitle' => "don't worry about over-chemicalized water",
+  'description' => "Since you're adding only the chemicals that are needed, there's no worry baout over-chemicalized water.",
+  '#divider-class' => 'icon-wrench',
+  '#section-id' => 'section-confidence',
+);
+$sections['convenience'] = array(
+  'title' => 'convenient',
+  'subtitle' => 'there for you when you need help',
+  'description' => "The pHin network of pool service experts is just one button press away. <br /> Whether it's for cleaning, repairs, or just questions, pHin is there for you.",
+  '#divider-class' => 'icon-wrench',
+  '#section-id' => 'section-convenience',
+);
+$sections['service'] = array(
+  'title' => 'service',
+  'subtitle' => "simple pre-negotiated rates &amp<br/> one-button pool service scheduling",
+  'description' => "There's no haggling and no need to even be home when the pHin service technician arrives.",
+  '#divider-class' => 'icon-phone',
+  '#section-id' => 'section-service',
+);
+?>
+
+
+
+
+<?php $section = $sections['easy']; ?>
+<section class="section simple" id="<?= $section['#section-id'] ?>">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-7 text-center">
+        <h1><?= $section['title'] ?></h1>
+
+        <h3><?= $section['subtitle'] ?></h3>
+
+        <div class="divider <?= $section['#divider-class'] ?>"></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<?php $section = $sections['confidence']; ?>
+<section class="section simple" id="<?= $section['#section-id'] ?>">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-5 text-center">
+        <h1><?= $section['title'] ?></h1>
+
+        <h3><?= $section['subtitle'] ?></h3>
+
+        <div class="divider <?= $section['#divider-class'] ?>"></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+      <div class="col-md-7"></div>
+
+    </div>
+  </div>
+</section>
+
+<?php $section = $sections['convenience']; ?>
+<section class=" section simple" id="<?= $section['#section-id'] ?>">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-6 text-center">
+        <h1><?= $section['title'] ?></h1>
+
+        <h3><?= $section['subtitle'] ?></h3>
+
+        <div class="divider <?= $section['#divider-class'] ?>"></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+      <div class="col-md-2"></div>
+
+    </div>
+  </div>
+</section>
+
+<?php $section = $sections['service']; ?>
+<section class="section simple" id="<?= $section['#section-id'] ?>">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 text-center">
+        <h1><?= $section['title'] ?></h1>
+
+        <h3><?= $section['subtitle'] ?></h3>
+
+        <div class="divider <?= $section['#divider-class'] ?>"></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+      <div class="col-md-7"></div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+<?php
+////////////////////////////////////////////////////////////////////////
+// MULTI-COLUMNED SECTION CONTENT
+//
+
+$sections = array();
+$sections[1] =
+  array('content' => "If your pool ever needs any specialty chemicals, such as algaecide, we'll ship you what you need, at discounted prices.");
+$sections[2] =
+  array('content' => "Monitor not just pH and chlorine, but also total alkalinity, total hardness, and cyanuric acid as well.");
+$sections[3] =
+  array('content' => "Easy monthly subscriptions plan means that we're always there for you to make pool care easy.  We'll also ship you upgraded hardware automatically, at no extra charge.");
+$sections[4] = array('content' => "Lab grade sensors and no moving parts give you consistent and reliable readings.");
+$sections[5] = array('content' => "Check on your pool from anywhere in the world.");
+$sections[6] =
+  array('content' => "Get expert help when you need it, but only pay for it when you want it.  No need to pay someone year-round if you just need a quick pool cleaning, a pump repaired, or annual filter maintenance.");
+?>
+<section class="section columned">
+  <div class="container">
+    <div class="row">
+      <div class="column-1 col-md-4">
+        <div class="column-block" id="column-1-item-1"><?= $sections[1]['content'] ?></div>
+        <div class="column-block" id="column-1-item-2"><?= $sections[2]['content'] ?></div>
+      </div>
+      <div class="column-2 col-md-4">
+        <div class="column-block" id="column-2-item-1"><?= $sections[3]['content'] ?></div>
+        <div class="column-block" id="column-2-item-2"><?= $sections[4]['content'] ?></div>
+      </div>
+      <div class="column-3 col-md-4">
+        <div class="column-block" id="column-3-item-1"><?= $sections[5]['content'] ?></div>
+        <div class="column-block" id="column-3-item-2"><?= $sections[6]['content'] ?></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<?php
+////////////////////////////////////////////////////////////////////////
+//
+//
+
+$sections = array();
+$sections['monitor'] = array(
+  'title' => 'Monitor',
+  'description' => 'pHin is always on, monitoring pH, temperature, and more.',
+  '#id' => 'monitor',
+);
+$sections['drop'] = array(
+  'title' => 'Drop',
+  'description' => 'Pre-measured pads keep your pool balanced and arrive at your door when you need them.',
+  '#id' => 'drop',
+);
+$sections['notify'] = array(
+  'title' => 'Notify',
+  'description' => 'Never worry about your pool again.  pHin has you covered 24/7.',
+  '#id' => 'notify',
+);
+?>
+
+<section class="section positioned" id="section-lifecycle">
+  <div class="container">
+    <div class="row">
+      <?php $section = $sections['monitor'] ?>
+      <div class="block col-md-4 col-md-offset-4 text-center" id="cycle-monitor">
+        <div class="title"><?= $section['title']; ?></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+    </div>
+    <div class="row">
+      <?php $section = $sections['notify'] ?>
+      <div class="block col-md-4 col-md-push-8 text-left" id="cycle-notify">
+        <div class="title"><?= $section['title']; ?></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+
+      <?php $section = $sections['drop'] ?>
+      <div class="block col-md-4 col-md-pull-4 text-right" id="cycle-drop">
+        <div class="title"><?= $section['title']; ?></div>
+        <div class="description"><?= $section['description']; ?></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<?php
+////////////////////////////////////////////////////////////////////////
+//
+//
+
+
+$prices = array();
+$prices['pool']['year']['sensor'] = 'free';
+$prices['pool']['year']['fee'] = '35';
+$prices['pool']['month']['sensor'] = '99';
+$prices['pool']['month']['fee'] = '50';
+$prices['spa']['year']['sensor'] = 'free';
+$prices['spa']['year']['fee'] = '25';
+$prices['spa']['month']['sensor'] = '99';
+$prices['spa']['month']['fee'] = '40';
+$prices['combo']['year']['sensor'] = 'free';
+$prices['combo']['year']['fee'] = '50';
+$prices['combo']['month']['sensor'] = '99';
+$prices['combo']['month']['fee'] = '80';
+
+$json['pricing']['pool']['yearly'] = '35';
+$json['pricing']['pool']['monthly'] = '50';
+$json['pricing']['spa']['yearly'] = '25';
+$json['pricing']['spa']['monthly'] = '40';
+$json['pricing']['combo']['yearly'] = '50';
+$json['pricing']['combo']['monthly'] = '80';
+$json['summary'] = array();
+
+?>
+<section id="order-choice">
+  <div class="container">
+    <div class="row text-center">
+      <h1>Pre-order pHin today</h1>
+      <h3>Choose one.</h3>
+    </div>
+
+    <form>
+      <div class="row text-center choice-header">
+        <div class="choice-item checked col-xs-2 col-xs-offset-3">
+          <input checked="checked" id="service-type-pool" type="radio" name="service-type" value="pool" />
+          <label for="service-type-pool">Pool</label>
+        </div>
+        <div class="choice-item col-xs-2">
+          <input id="service-type-spa" type="radio" name="service-type" value="spa"/>
+          <label for="service-type-spa">Hot Tub</label>
+        </div>
+        <div class="choice-item col-xs-2">
+          <input id="service-type-combo" type="radio" name="service-type" value="combo"/>
+          <label for="service-type-combo">Both</label>
+        </div>
+      </div>
+
+
+      <?php /* Pool and Spa layouts are the same, but "both" is completely different. */ ?>
+      <section class="row text-center show pricing-section" id="price-pool">
+        <div class="col-md-6 subscription-yearly" id="pricing-pool-yearly">
+          <div class="subscription-type">
+            <input checked="checked" type="radio" name="subscription-length" value="year" id="length-year"/>
+            <label for="length-year">1-year subscription</label>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-sensor">
+              <strong><?= $prices['pool']['year']['sensor'] ?></strong><br/>
+              <span class="price-sub-text">sensor</span>
+            </div>
+            <div class="col-xs-4 price-subscription">
+              <span class="price-dollar">$</span>
+              <strong><?= $prices['pool']['year']['fee'] ?></strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">subscription</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 subscription-monthly" id="pricing-pool-monthly">
+          <div class="subscription-type">
+            <input type="radio" name="subscription-length" value="year" id="length-month"/>
+            <label for="length-month">month-to-month subscription</label>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-sensor">
+              <span class="price-dollar">$</span>
+              <strong><?= $prices['pool']['year']['sensor'] ?></strong>
+              <br/>
+              <span class="price-sub-text">sensor</span>
+            </div>
+            <div class="col-xs-4 price-subscription">
+              <span class="price-dollar">$</span>
+              <strong><?= $prices['pool']['year']['fee'] ?></strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">subscription</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row text-center hidden pricing-section" id="price-spa">
+        <div class="col-md-6 subscription-yearly" id="pricing-spa-yearly">
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-sensor">
+              <strong><?= $prices['spa']['year']['sensor'] ?></strong><br/>sensor
+            </div>
+            <div class="col-xs-4 price-subscription">
+              <span class="price-dollar">$</span>
+              <strong><?= $prices['spa']['year']['fee'] ?></strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">subscription</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 subscription-monthly" id="pricing-spa-monthly">
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-sensor">$<?= $prices['spa']['year']['sensor'] ?><br/>sensor</div>
+            <div class="col-xs-4 price-subscription">
+              <span class="price-dollar">$</span>
+              <strong><?= $prices['spa']['year']['fee'] ?></strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">subscription</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="row text-center hidden pricing-section" id="price-combo">
+        <div class="col-md-6 subscription-yearly" id="pricing-combo-yearly">
+          <div class="row">
+            <div class="price-sensor"><strong>2 Free</strong><br/>sensors</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-subscription-combo">
+              <span class="price-dollar">$</span>
+              <strong>30</strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">pool subscription</span>
+            </div>
+            <div class="col-xs-4 price-subscription-combo">
+              <span class="price-dollar">$</span>
+              <strong>20</strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">hot tub subscription</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center subscription-monthly" id="pricing-combo-monthly">
+          <div class="row">
+            <div class="price-sensor">$<strong>99</strong>x2<br/>sensors</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 price-subscription-combo">
+              <span class="price-dollar">$</span>
+              <strong>45</strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">pool subscription</span>
+            </div>
+            <div class="col-xs-4 price-subscription-combo">
+              <span class="price-dollar">$</span>
+              <strong>35</strong>
+              <span class="price-per-month">/mo.</span><br/>
+              <span class="price-sub-text">hot tub subscription</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div id="limited-time-offer" class="row limited-time text-center">
+        <div class="col-md-6 col-md-offset-3" id="limited-time-block">
+          <div class="row">
+            <div class="title col-xs-4 col-xs-offset-4">Limited time only</div>
+          </div>
+          <div class="promo">
+            receive <strong class="very-strong">3</strong> additional <strong>months free</strong>
+          </div>
+          <div class="order-button">
+            <button class="button btn" id="place-order-button">
+              <span>Pre-order for just $35 now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="fine-print col-md-8 col-md-offset-2">
+        <p>
+          Pricing is per month as part of an annual subscription.
+          The sensor only works as part of a paid subscription.
+          Your credit card will be charged one month now, and then
+          you won't be billed again until after the product has shipped,
+          and you've used up all your paid and free months.
+        </p>
+
+        <p>
+          This is an awesome service and will take a bit of time to perfect
+          (our standards are high), we expect to start shipping early next year,
+          giving for plenty of testing, and incorporating your feedback in
+          the meantime.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="order-screen">
+  <div class="container">
+    <div class="row">
+      <section id="payment" class="pull-center col-md-5">
+        <h2 id="label-name">Full Name</h2>
+
+        <div class="form-group" id="input-group-full-name">
+          <input type="text" class="form-control" name="full_name" id="payment-full-name" placeholder="John Smith"/>
+        </div>
+
+
+        <h2 id="label-address">Shipping Address</h2>
+
+        <div id="input-group-address" class="form-group">
+          <label for="payment-address-1">Address</label>
+          <input type="text" class="form-control" name="address_1" id="payment-address-1" placeholder="Street Address"/>
+          <input type="text" class="form-control" name="address_2" id="payment-address-2"
+                 placeholder="Apartment / Suite"/>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-group" id="input-group-city">
+              <label for="payment-address-1">City</label>
+              <input type="text" class="form-control" name="city" id="payment-city" placeholder="City Name"/>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group" id="input-group-state">
+              <label for="payment-state">State</label>
+              <?= $this->formSelect($this->usStateSelect()); ?>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group" id="input-group-postal-code">
+              <label for="payment-postal-code">Zip</label>
+              <input type="text" class="form-control" name="postal_code" id="payment-postal-code" placeholder="99999"/>
+            </div>
+          </div>
+        </div>
+
+
+        <h2 id="label-payment">Payment</h2>
+
+        <div class="form-group" id="input- group-cc">
+          <label for="payment-cc">Card Number</label>
+          <input class="form-control" type="text" id="payment-cc" placeholder="9999-9999-9999-9999"/>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-group" id="input-group-exp">
+              <label for="payment-exp-month">Expiration Date</label>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <?= $this->formSelect($this->numberRangeSelect()
+                    ->setFormat('%02d')
+                    ->setRange(1, 12)
+                    ->setAttribute('id', 'payment-exp-month')
+                    ->setAttribute('class', 'form-control')
+                    ->getSelect()); ?>
+                </div>
+                <div class="col-sm-6">
+                  <?= $this->formSelect(
+                    $this->numberRangeSelect()
+                    ->setFormat('%02d')
+                    ->setRange(2015, 2050)
+                    ->setAttribute('id', 'payment-exp-year')
+                    ->setAttribute('class', 'form-control')
+                    ->getSelect()); ?>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group" id="input-group-cvv">
+              <label for="payment-cvv">CVC</label>
+              <input type="text" class="form-control" id="payment-cvv" placeholder="999"/>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group" id="input-group-zip">
+              <label for="payment-zip">Zip</label>
+              <input type="text" class="form-control" id="payment-zip" placeholder="99999"/>
+            </div>
+          </div>
+        </div>
+
+
+        <h2 id="label-contact">Contact Info</h2>
+
+        <div class="form-group" id="input-group-cc">
+          <label for="payment-cc">Phone Number</label>
+          <input type="text" class="form-control" id="payment-phone" placeholder="590-989-7788"/>
+        </div>
+
+        <div class="form-group" id="input-group-cc">
+          <label for="payment-cc">E-Mail</label>
+          <input type="text" class="form-control" id="payment-email" placeholder="email@example.com"/>
+        </div>
+      </section>
+
+      <section id="payment-summary" class="pull-center col-md-7 text-center">
+        <div class="action">
+          <button class="btn" id="change-selection">change</button>
+        </div>
+        <div id="overview-subscription-type">[1 year subscription]</div>
+        <div id="overview-breakdown" class="row">
+          <div id="overview-sensor" class="col-sm-4  text-center">
+            <div id="sensor-cost-amount" class="summary-large">Free</div>
+            <div id="sensor-cost-subtext" class="summary-small">sensor</div>
+          </div>
+          <div id="overview-subscription" class="col-sm-4  text-center">
+            <div><span class="dollar-sign">$</span><span id="subscription-cost-amount" class="summary-large">35</span><span class="summary-medium">/mo.</span></div>
+            <div id="subscription-cost-subtext" class="summary-small">subscription</div>
+          </div>
+          <div id="overview-promo" class="col-sm-4">
+            <div class="row text-center ">
+              <div class="col-xs-5 text-right summary-large" id="promo-months">3</div>
+              <div class="col-xs-7 text-left summary-xs" id="promo-add">additional<br/> months free</div>
+            </div>
+            <div id="promo-subtext" class="summary-small">super early special</div>
+          </div>
+        </div>
+        <div id="overview-total">
+          <div class="text-uppercase"><strong>order total</strong></div>
+          <span id="order-total-dollar" class="summary-large">$</span><span class="summary-xxl" id="overview-total-amount">[35]</span>
+        </div>
+        <div id="overview-submit">
+          <input id="order-submit-button" type="submit" class="btn" value="place preorder"/>
+        </div>
+        <div id="overview-delivery">
+          <p>Will be shipped in February</p>
+        </div>
+        <div id="overview-fine-print">
+          <p>Your credit card will be charged for one month now, and then you won't
+            be billed again until after the product has shipped, and you've used
+            up all your paid and free months.</p>
+        </div>
+      </section>
+      <section id="field-error" class="hidden">
+        <div class="field-dialog">
+          <h1>Almost there</h1>
+
+          <p>Please enter all the fields and you're good to go.</p>
+        </div>
+      </section>
+      <section id="order-complete" class="hidden">
+        <div class="field-dialog">
+          <h1>Thank you for your order!</h1>
+
+          <div class="confirmation-text">
+            <p>You will receive an email confirmation shortly at</p>
+
+            <p class="email-address" id="email-placeholder">[placeholder]</p>
+          </div>
+          <hr class="short"/>
+          <div id="complete-share">
+            <p>Time to show off your new toy on</p>
+
+            <p id="refer-a-friend">Refer a friend and get an additional 1 month free!</p>
+
+            <form>
+              <div class="input-field">
+                <input type="email" placeholder="Friend's email address" name="email"/>
+              </div>
+              <div class="input-field">
+                <input type="submit" value="submit"/>
+              </div>
+            </form>
+          </div>
+          <div id="return-to-landing">
+            <button>return to website</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
