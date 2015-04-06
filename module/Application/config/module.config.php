@@ -60,15 +60,8 @@ return array(
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
-    ),
-    'translator' => array(
-        'locale' => 'en_US',
-        'translation_file_patterns' => array(
-            array(
-                'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
-                'pattern'  => '%s.mo',
-            ),
+        'invokables' => array(
+          'theme' => 'Application\Service\ThemeManager',
         ),
     ),
     'controllers' => array(
@@ -99,4 +92,25 @@ return array(
             ),
         ),
     ),
+
+    'themes' => array(
+        'default' => array(
+            'description' => 'Default Theme',
+            'template_map' => array(
+                'application/index/index' => __DIR__ . '/../theme/default/application/index/index.phtml',
+                'layout/layout' => __DIR__ . '/../theme/default/layout/layout.phtml',
+            ),
+            'template_path_stack' => array(
+              __DIR__ . '/../theme/default/',
+            ),
+        ),
+    ),
+
+  'view_helpers' => array(
+    'invokables' => array(
+      'usStateSelect' => 'Application\Helper\StateSelectHelper',
+      'numberRangeSelect' => 'Application\Helper\NumberRangeSelectHelper',
+        'formSelect' => 'Application\Helper\FormSelectHelper',
+    ),
+  ),
 );

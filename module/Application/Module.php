@@ -9,31 +9,41 @@
 
 namespace Application;
 
+use Application\Service\ThemeManager;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
-class Module
-{
-    public function onBootstrap(MvcEvent $e)
-    {
-        $eventManager        = $e->getApplication()->getEventManager();
-        $moduleRouteListener = new ModuleRouteListener();
-        $moduleRouteListener->attach($eventManager);
-    }
+class Module {
+  public function onBootstrap(MvcEvent $e) {
+    $eventManager = $e->getApplication()->getEventManager();
+    $moduleRouteListener = new ModuleRouteListener();
+    $moduleRouteListener->attach($eventManager);
 
-    public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
+    // Theme Handling
+    $eventManager->attach(MvcEvent::EVENT_RENDER, array($this, 'prepareTheme'), 100);
+  }
 
-    public function getAutoloaderConfig()
-    {
-        return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
-    }
+
+  public function getConfig() {
+    return include __DIR__ . '/config/module.config.php';
+  }
+
+
+  public function getAutoloaderConfig() {
+    return array(
+      'Zend\Loader\StandardAutoloader' => array(
+        'namespaces' => array(
+          __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+        ),
+      ),
+    );
+  }
+
+
+  public function prepareTheme(MvcEvent $event) {
+    $services = $event->getApplication()->getServiceManager();
+    /** @var ThemeManager $themes */
+    $themeManager = $services->get('theme');
+    $themeManager->registerActiveTheme($services);
+  }
 }
