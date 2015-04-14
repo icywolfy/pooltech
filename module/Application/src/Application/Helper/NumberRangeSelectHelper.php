@@ -19,10 +19,10 @@ class NumberRangeSelectHelper extends AbstractHelper {
     $rawRange = range($this->rangeStart, $this->rangeEnd);
     $numberFormat = $this->format;
     $options = array_combine($rawRange, $rawRange);
-    $range = array_map(function ($v) use ($numberFormat) {
+    $optionsRange = array_map(function ($v) use ($numberFormat) {
       return sprintf($numberFormat, $v);
-    }, $rawRange);
-    $select->setValueOptions($range);
+    }, $options);
+    $select->setValueOptions($optionsRange);
     $select->setAttributes($this->attributes);
     return $select;
   }
