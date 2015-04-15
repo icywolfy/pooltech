@@ -213,6 +213,9 @@ select.form-control {
 }
 
 
+.navbar-header {
+    float: left;
+}
 /**
  * Order Choice Section
  */
