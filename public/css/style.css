@@ -430,7 +430,36 @@ input.error, select.error {
     width: 57%;
 }
 
+#order-choice input[type="radio"] + label {
+    font-size: 20px;
+}
+#order-choice input[type="radio"] + label::before {
+    content: url("/img/assets/icon_no_check.png");
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
 
+#order-choice input[type="radio"]:checked + label::before {
+    content: url("/img/assets/icon_check.png");
+}
+
+#limited-time-block {
+    padding-bottom: 30px;
+}
+#limited-time-offer .promo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#limited-time-offer .title {
+    font-size: 20px;
+}
+.pre-icon-watch::before {
+    content: url("/img/assets/icon_watch.png");
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
 @media (min-width: 768px) {
     #collage-section {
         padding-top: 0;

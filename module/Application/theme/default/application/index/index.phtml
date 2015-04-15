@@ -314,8 +314,8 @@ $prices['summary'] = array();
     $checkedAttr = $checked ? 'checked="checked"' : '';
     return <<<HTML
               <div class="subscription-type">
-                <input {$checkedAttr} type="radio" name="subscription-length" value="year" class="subtype-{$type}" data-first-month="{$prices[$type]['year']['fee']}">
-                <label for="length-year">1-year subscription</label>
+                <input {$checkedAttr} type="radio" name="subscription-length" value="year" class="sr-only subtype-{$type}" data-first-month="{$prices[$type]['year']['fee']}" id="{$type}-length-year">
+                <label for="{$type}-length-year">1-year subscription</label>
               </div>
 HTML;
   };
@@ -323,8 +323,8 @@ HTML;
   $monthlyRadio = function ($type) use ($prices) {
     return <<<HTML
               <div class="subscription-type">
-                <input type="radio" name="subscription-length" value="month" class="subtype-{$type}"  data-first-month="{$prices[$type]['month']['fee']}"/>
-                <label for="length-month">month-to-month subscription</label>
+                <input type="radio" name="subscription-length" value="month" class="sr-only subtype-{$type}"  data-first-month="{$prices[$type]['month']['fee']}" id="{$type}-length-month"/>
+                <label for="{$type}-length-month">month-to-month subscription</label>
               </div>
 HTML;
   };
@@ -462,10 +462,10 @@ HTML;
   <div id="limited-time-offer" class="row limited-time text-center">
     <div class="col-md-6 col-md-offset-3" id="limited-time-block">
       <div class="row">
-        <div class="title col-xs-4 col-xs-offset-4">Limited time only</div>
+        <div class="pre-icon-watch title col-xs-6 col-xs-offset-3">Limited time only</div>
       </div>
       <div class="promo">
-        receive 3 additional months <strong>free</strong>
+        Receive 3 additional months <strong>free</strong>
       </div>
       <div class="order-button">
         <button class="button btn" id="place-order-button">
