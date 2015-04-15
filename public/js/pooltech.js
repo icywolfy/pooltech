@@ -249,12 +249,21 @@ pooltechStripe = {
 
 pooltech = {
   priceButtonDollarAmount: null,
+  overviewPriceDisplay: null,
+  overviewSubscriptionType: null,
+  summaryPriceDisplay: null,
+  summarySensorDisplay: null,
   pricePanel: null,
 
   init: function () {
     var order = $('#order-choice');
     pooltech.pricePanel = order;
     pooltech.priceButtonDollarAmount = $('#place-order-dollar-amount');
+    pooltech.overviewPriceDisplay = $('#overview-total-amount');
+    pooltech.overviewSubscriptionType = $('#overview-subscription-type');
+    pooltech.summaryPriceDisplay = $('#subscription-cost-amount');
+    pooltech.summarySensorDisplay = $('#sensor-cost-amount');
+    $('#pool-length-year').click();
     order.on('shown.bs.tab', '.nav-tabs a', pooltech.propagateSelectedTimeframe);
     order.on('shown.bs.tab', '.nav-tabs a', pooltech.updatePriceButton);
     order.on('click', 'input', pooltech.updatePriceButton);
@@ -262,8 +271,21 @@ pooltech = {
 
 
   updatePriceButton: function () {
-    var amount = pooltech.pricePanel.find('input:checked').data('first-month');
+    var checkedElement = pooltech.pricePanel.find('input:checked');
+    var amount = checkedElement.data('first-month');
+    var sensor = checkedElement.data('sensor');
+    var description = checkedElement.val() === 'year' ? '1-year subscription' : 'Month-to-month subscription';
     pooltech.priceButtonDollarAmount.text(amount);
+    pooltech.overviewPriceDisplay.text(amount);
+    pooltech.summaryPriceDisplay.text(amount);
+    pooltech.summarySensorDisplay.text(sensor);
+    pooltech.overviewSubscriptionType.text(description);
+    var sensorElement = $('#sensor-dollar-sign');
+    if ((""+sensor).match(/^[0-9]/)) {
+      sensorElement.removeClass('hidden');
+    } else {
+      sensorElement.addClass('hidden');
+    }
   },
 
   propagateSelectedTimeframe: function (e) {

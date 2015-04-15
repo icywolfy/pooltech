@@ -204,13 +204,14 @@ select.form-control {
         vertical-align: middle;
         float: none;
     }
+    .pull-center.col-md-5 {
+        width: 40%;
+    }
+    .pull-center.col-md-7 {
+        width: 57%;
+    }
 }
-.pull-center.col-md-5 {
-    width: 40%;
-}
-.pull-center.col-md-7 {
-    width: 57%;
-}
+
 
 /**
  * Order Choice Section
@@ -480,4 +481,68 @@ input.error, select.error {
     .subscription-type {
         margin-top: 1em;
     }
+}
+
+.navbar-brand::before {
+    content: url("/img/assets/logo.png");
+}
+.navbar-actions {
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 25px;
+    float: right;
+}
+#order-now-nav-button {
+    text-transform: uppercase;
+    /*font-variant: small-caps;*/
+    background-color: #2a6496;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+nav {
+    background-color: white;
+    border-bottom: 1px solid #888888;
+}
+
+#overview-promo strong {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 110%;
+}
+#payment-form h2, #payment-form .h2 {
+    font-size: 20px;
+}
+.highlight-1 {
+    color: #db7b1e;
+}
+
+#order-screen {
+    background-color: white;
+    color: #222222;
+}
+#payment {
+    background-color: #B5D8FF;
+    border-radius: 5px;
+}
+.order-button {
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+#change-selection {
+    color: #1d73ab;
+    background-color: white;
+    border: 1px solid #1d73ab;
+}
+
+#order-submit-button {
+    background-color: #1d73ab;
+    color: white;
+    padding: 0.5em 0.8em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#payment-summary {
+    padding-left: 40px;
 }

@@ -44,7 +44,7 @@ $sections['service'] = array(
   <div class="container">
     <div class="row">
       <div class="pull-center col-sm-5" id="easy-splash">
-        <img class="center-block img-responsive" src="/img/assets/image_iphone1.png" />
+        <img class="center-block img-responsive" src="/img/assets/image_iphone1.png"/>
       </div>
       <div class="pull-center col-sm-7 text-center center-block">
         <h1><?= $section['title'] ?></h1>
@@ -141,10 +141,10 @@ $sections[6] =
       <div class="column-1 col-sm-4">
         <div class="column-block" id="column-1-item-1">
           <div class="column-image">
-            <img src="/img/assets/image_collage1.png" /><br />
+            <img src="/img/assets/image_collage1.png"/><br/>
           </div>
           <div class="column-text">
-          <?= $sections[1]['content'] ?>
+            <?= $sections[1]['content'] ?>
           </div>
         </div>
         <div class="column-block" id="column-1-item-2">
@@ -154,7 +154,7 @@ $sections[6] =
       <div class="column-2 col-sm-4">
         <div class="column-block" id="column-2-item-1">
           <div class="column-image">
-            <img class="center-block img-responsive" src="/img/assets/image_collage3.png" /><br />
+            <img class="center-block img-responsive" src="/img/assets/image_collage3.png"/><br/>
           </div>
           <div class="column-text">
             <?= $sections[3]['content'] ?>
@@ -165,19 +165,19 @@ $sections[6] =
       <div class="column-3 col-sm-4">
         <div class="column-block" id="column-3-item-1">
           <div class="column-image">
-            <img src="/img/assets/image_collage4.png" /><br />
+            <img src="/img/assets/image_collage4.png"/><br/>
           </div>
           <div class="column-text">
-          <?= $sections[5]['content'] ?>
-            </div>
+            <?= $sections[5]['content'] ?>
+          </div>
         </div>
         <div class="column-block" id="column-3-item-2">
           <div class="column-image">
-            <img src="/img/assets/image_collage5.png" /><br />
+            <img src="/img/assets/image_collage5.png"/><br/>
           </div>
           <div class="column-text">
-          <?= $sections[6]['content'] ?>
-            </div>
+            <?= $sections[6]['content'] ?>
+          </div>
         </div>
       </div>
     </div>
@@ -258,7 +258,7 @@ $prices['spa']['month']['sensor'] = '99';
 $prices['spa']['month']['fee'] = '40';
 $prices['combo']['year']['sensor'] = 'free';
 $prices['combo']['year']['fee'] = '50';
-$prices['combo']['month']['sensor'] = '99';
+$prices['combo']['month']['sensor'] = '198';
 $prices['combo']['month']['fee'] = '80';
 
 $prices['pricing']['pool']['yearly'] = '35';
@@ -300,21 +300,22 @@ $prices['summary'] = array();
   <div>
 
     <ul class="nav nav-tabs">
-        <li id="choice-tab-pool" class="active"><a href="#panel-price-pool" data-subtype="pool" data-toggle="tab">Pool</a>
-        </li>
-        <li id="choice-tab-spa"><a href="#panel-price-spa" data-subtype="spa" data-toggle="tab">Hot Tub</a></li>
-        <li id="choice-tab-combo"><a href="#panel-price-combo" data-subtype="combo" data-toggle="tab">Both</a></li>
+      <li id="choice-tab-pool" class="active"><a href="#panel-price-pool" data-subtype="pool" data-toggle="tab">Pool</a>
+      </li>
+      <li id="choice-tab-spa"><a href="#panel-price-spa" data-subtype="spa" data-toggle="tab">Hot Tub</a></li>
+      <li id="choice-tab-combo"><a href="#panel-price-combo" data-subtype="combo" data-toggle="tab">Both</a></li>
     </ul>
   </div>
 
   <?php /* Pool and Spa layouts are the same, but "both" is completely different. */ ?>
 
   <?php /* No idea what I'm doing here, so copy/pasta. */
-  $yearlyRadio = function ($type, $checked=false) use ($prices) {
+  $yearlyRadio = function ($type, $checked = false) use ($prices) {
     $checkedAttr = $checked ? 'checked="checked"' : '';
+
     return <<<HTML
               <div class="subscription-type">
-                <input {$checkedAttr} type="radio" name="subscription-length" value="year" class="sr-only subtype-{$type}" data-first-month="{$prices[$type]['year']['fee']}" id="{$type}-length-year">
+                <input {$checkedAttr} type="radio" name="subscription-length" value="year" class="sr-only subtype-{$type}" data-sensor="{$prices[$type]['year']['sensor']}" data-first-month="{$prices[$type]['year']['fee']}" id="{$type}-length-year">
                 <label for="{$type}-length-year">1-year subscription</label>
               </div>
 HTML;
@@ -323,7 +324,7 @@ HTML;
   $monthlyRadio = function ($type) use ($prices) {
     return <<<HTML
               <div class="subscription-type">
-                <input type="radio" name="subscription-length" value="month" class="sr-only subtype-{$type}"  data-first-month="{$prices[$type]['month']['fee']}" id="{$type}-length-month"/>
+                <input type="radio" name="subscription-length" value="month" class="sr-only subtype-{$type}"  data-sensor="{$prices[$type]['month']['sensor']}" data-first-month="{$prices[$type]['month']['fee']}" id="{$type}-length-month"/>
                 <label for="{$type}-length-month">month-to-month subscription</label>
               </div>
 HTML;
@@ -487,9 +488,9 @@ HTML;
     </p>
 
     <p>
-      <b>The sensor only works as part of a paid subscription.</b><br />
+      <b>The sensor only works as part of a paid subscription.</b><br/>
       If you're interested in pHin, but only for a few months per year, please click here — and we'll
-      notify you when this service is available.  This is an awesome service and will take a bit of time to perfect
+      notify you when this service is available. This is an awesome service and will take a bit of time to perfect
       (our standards are high), so we will start service early next year, don't expect
       it for this summer.
     </p>
@@ -509,11 +510,13 @@ HTML;
   <form action="" method="POST" id="payment-form">
     <div class="container">
       <div class="row">
+
         <section id="payment" class="pull-center col-md-5">
           <h2 id="label-name">Full Name</h2>
 
           <div class="form-group" id="input-group-full-name">
-            <input type="text" class="form-control" name="full_name" id="payment-full-name" placeholder="John Smith" data-stripe="name"/>
+            <input type="text" class="form-control" name="full_name" id="payment-full-name" placeholder="John Smith"
+                   data-stripe="name"/>
           </div>
 
 
@@ -613,35 +616,46 @@ HTML;
 
         <section id="payment-summary" class="pull-center col-md-7 text-center">
           <div class="action">
-            <button class="btn" id="change-selection">change</button>
+            <button class="btn order-button" id="change-selection">change</button>
           </div>
-          <div id="overview-subscription-type">[1 year subscription]</div>
+          <div id="overview-subscription-type">1 year subscription</div>
           <div id="overview-breakdown" class="row">
-            <div id="overview-sensor" class="col-sm-4  text-center">
-              <div id="sensor-cost-amount" class="summary-large">Free</div>
+            <div id="overview-sensor" class="col-xs-4  text-center">
+
+              <div>
+                <span class="dollar-sign hidden" id="sensor-dollar-sign">$</span>
+                <span id="sensor-cost-amount" class="summary-large highlight-1">Free</span>
+              </div>
               <div id="sensor-cost-subtext" class="summary-small">sensor</div>
             </div>
-            <div id="overview-subscription" class="col-sm-4  text-center">
-              <div><span class="dollar-sign">$</span><span id="subscription-cost-amount"
-                                                           class="summary-large">35</span><span class="summary-medium">/mo.</span>
+            <div id="overview-subscription" class="col-xs-4  text-center">
+              <div>
+                <span class="dollar-sign">$</span>
+                <span id="subscription-cost-amount" class="summary-large highlight-1">35</span>
+                <span class="summary-medium">/mo.</span>
               </div>
               <div id="subscription-cost-subtext" class="summary-small">subscription</div>
             </div>
-            <div id="overview-promo" class="col-sm-4">
-              <div class="row text-center ">
-                <div class="col-xs-5 text-right summary-large" id="promo-months">3</div>
-                <div class="col-xs-7 text-left summary-xs" id="promo-add">additional<br/> months free</div>
+            <div id="overview-promo" class="col-xs-4">
+              <div class="text-left summary-small">
+                additional <br />
+                <span id="promo-months">3</span> months <br />
+                <strong class="highlight-1">free.</strong>
               </div>
-              <div id="promo-subtext" class="summary-small">super early special</div>
+<!--              <div class="row text-center">-->
+<!--                <div class="col-xs-5 text-right summary-large" id="promo-months">3</div>-->
+<!--                <div class="col-xs-7 text-left summary-xs" id="promo-add">additional<br/> months free</div>-->
+<!--              </div>-->
+<!--              <div id="promo-subtext" class="summary-small">super early special</div>-->
             </div>
           </div>
           <div id="overview-total">
             <div class="text-uppercase"><strong>order total</strong></div>
             <span id="order-total-dollar" class="summary-large">$</span><span class="summary-xxl"
-                                                                              id="overview-total-amount">[35]</span>
+                                                                              id="overview-total-amount">35</span>
           </div>
           <div id="overview-submit">
-            <input id="order-submit-button" type="submit" class="btn" value="place preorder"/>
+            <input id="order-submit-button" type="submit" class="btn order-button" value="place order"/>
           </div>
           <div id="overview-delivery">
             <p>Will be shipped in February</p>
@@ -652,6 +666,7 @@ HTML;
               up all your paid and free months.</p>
           </div>
         </section>
+
         <section id="field-error" class="hidden">
           <div class="field-dialog">
             <h1>Almost there</h1>
@@ -659,6 +674,7 @@ HTML;
             <p>Please enter all the fields and you're good to go.</p>
           </div>
         </section>
+
         <section id="order-complete" class="hidden">
           <div class="field-dialog">
             <h1>Thank you for your order!</h1>
