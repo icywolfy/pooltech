@@ -43,10 +43,10 @@ $sections['service'] = array(
 <section class="section simple" id="<?= $section['#section-id'] ?>">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5" id="easy-splash">
-        <img src="/img/assets/image_iphone1.png" />
+      <div class="pull-center col-sm-5" id="easy-splash">
+        <img class="center-block img-responsive" src="/img/assets/image_iphone1.png" />
       </div>
-      <div class="col-sm-7 text-center">
+      <div class="pull-center col-sm-7 text-center center-block">
         <h1><?= $section['title'] ?></h1>
 
         <h3><?= $section['subtitle'] ?></h3>
@@ -82,10 +82,10 @@ $sections['service'] = array(
 <section class=" section simple" id="<?= $section['#section-id'] ?>">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4" id="convenience-splash">
-        <img src="/img/assets/image_iphone2.png">
+      <div class="pull-center col-sm-4" id="convenience-splash">
+        <img class="center-block img-responsive" src="/img/assets/image_iphone2.png">
       </div>
-      <div class="col-sm-4 text-center">
+      <div class="pull-center col-sm-4 text-center">
         <h1><?= $section['title'] ?></h1>
 
         <h3><?= $section['subtitle'] ?></h3>
@@ -93,8 +93,6 @@ $sections['service'] = array(
         <div class="divider <?= $section['#divider-class'] ?>"></div>
         <div class="description"><?= $section['description']; ?></div>
       </div>
-      <div class="col-sm-2"></div>
-
     </div>
   </div>
 </section>
@@ -137,7 +135,7 @@ $sections[5] = array('content' => "Check on your pool from anywhere in the world
 $sections[6] =
   array('content' => "Get expert help when you need it, but only pay for it when you want it.  No need to pay someone year-round if you just need a quick pool cleaning, a pump repaired, or annual filter maintenance.");
 ?>
-<section class="section columned">
+<section id="collage-section" class="section columned">
   <div class="container">
     <div id="sectioned-row" class="row low-gutter">
       <div class="column-1 col-sm-4">
@@ -155,14 +153,32 @@ $sections[6] =
       </div>
       <div class="column-2 col-sm-4">
         <div class="column-block" id="column-2-item-1">
-          <div id="c2i1-image"></div>
-          <?= $sections[3]['content'] ?>
+          <div class="column-image">
+            <img class="center-block img-responsive" src="/img/assets/image_collage3.png" /><br />
+          </div>
+          <div class="column-text">
+            <?= $sections[3]['content'] ?>
+          </div>
         </div>
         <div class="column-block" id="column-2-item-2"><?= $sections[4]['content'] ?></div>
       </div>
       <div class="column-3 col-sm-4">
-        <div class="column-block" id="column-3-item-1"><?= $sections[5]['content'] ?></div>
-        <div class="column-block" id="column-3-item-2"><?= $sections[6]['content'] ?></div>
+        <div class="column-block" id="column-3-item-1">
+          <div class="column-image">
+            <img src="/img/assets/image_collage4.png" /><br />
+          </div>
+          <div class="column-text">
+          <?= $sections[5]['content'] ?>
+            </div>
+        </div>
+        <div class="column-block" id="column-3-item-2">
+          <div class="column-image">
+            <img src="/img/assets/image_collage5.png" /><br />
+          </div>
+          <div class="column-text">
+          <?= $sections[6]['content'] ?>
+            </div>
+        </div>
       </div>
     </div>
   </div>
