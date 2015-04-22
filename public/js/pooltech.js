@@ -169,30 +169,39 @@ pooltechStripe = {
   validateForm: function () {
     var formData = this.getFormData();
     if (!this.validateFormItems.fullName(formData.fullName)) {
+      console.log('fullName');
       return false;
     }
     if (!this.validateFormItems.address1(formData.address1)) {
+      console.log('address1')
       return false;
     }
     if (!this.validateFormItems.city(formData.city)) {
+      console.log('city')
       return false;
     }
     if (!this.validateFormItems.zip(formData.zip)) {
+      console.log('zip')
       return false;
     }
     if (!this.validateFormItems.card(formData.card)) {
+      console.log('card')
       return false;
     }
     if (!this.validateFormItems.cardCvv(formData.cardCvv)) {
+      console.log('cvv')
       return false;
     }
     if (!this.validateFormItems.email(formData.email)) {
+      console.log('email')
       return false;
     }
     if (!this.validateFormItems.phone(formData.phone)) {
+      console.log('phone')
       return false;
     }
     if (!this.validateFormItems.cardZip(formData.cardZip)) {
+      console.log('zip')
       return false;
     }
     return true;
@@ -243,7 +252,7 @@ pooltechStripe = {
     var paymentForm = $('#payment-form');
     paymentForm.append($('<input type="hidden" name="token" />').val(token));
     paymentForm.append($('<input type="hidden" name="tokenData" />').val($.param(response)));
-    paymentForm.get(0).submit();
+
   }
 };
 
