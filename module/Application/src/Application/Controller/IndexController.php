@@ -13,16 +13,91 @@ use Application\CustomerRepository;
 use Application\Entity\CustomerData;
 use Application\Entity\Transaction;
 use Application\PaymentProcessor;
+use Stripe\Error\InvalidRequest;
 use Zend\Http\PhpEnvironment\Request;
+use Zend\Json\Json;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController {
-  public function indexAction() {
+class IndexController extends AbstractActionController
+{
+  public function indexAction()
+  {
     return new ViewModel();
   }
 
+
+  public function chargeCustomerAction()
+  {
+    /** @var Request $request */
+    $request = $this->getRequest();
+    $cardToken = $request->getQuery('customer');
+    \Stripe\Stripe::setApiKey('sk_test_4x3c30DKpLyURBmzsTq0hfCi');
+    try {
+      $customer = \Stripe\Charge::create(array(
+        'amount' => 100 + rand(0, 100),
+        'currency' => 'USD',
+        'customer' => $cardToken,
+        'description' => 'Charge from PoolTech',
+        'capture' => true,
+        'statement_descriptor' => 'pHin Preorder POOL',
+        'receipt_email' => 'stripe-test@deep-freeze.ca',
+
+      ));
+    } catch (\Stripe\Error\Card $e) {
+      echo '<pre>';
+      var_export($e->getMessage());
+      var_export($e->getHttpBody());
+      var_export($e->getJsonBody());
+      var_export($e->getHttpStatus());
+      var_export($e->getCode());
+    }
+    echo '<pre>';
+    var_export($customer);
+    if (is_object($customer) && method_exists($customer, '__toArray')) {
+      $result = $customer->__toArray();
+    } else {
+      $result = $customer;
+    }
+    return new JsonModel($result);
+  }
+
+  /** @var Request $request */
+  public function retrieveCustomerAction() {
+    $request = $this->getRequest();
+    $customerId = $request->getQuery('customer');
+    \Stripe\Stripe::setApiKey('sk_test_4x3c30DKpLyURBmzsTq0hfCi');
+    try {
+      $customer = \Stripe\Customer::retrieve($customerId);
+    } catch (InvalidRequest $e) {
+      var_export($e->getJsonBody());
+      var_export($e->param);
+    }
+    echo '<pre>';
+    var_export($customer);
+    return new JsonModel($customer->__toArray());
+  }
+
+  public function createCustomerAction() {
+    /** @var Request $request */
+    $request = $this->getRequest();
+    $cardToken = $request->getQuery('token');
+    \Stripe\Stripe::setApiKey('sk_test_4x3c30DKpLyURBmzsTq0hfCi');
+    $customer = \Stripe\Customer::create(array(
+      'source' => $cardToken,
+      'description' => '',
+      'email' => 'test@example.company',
+    ));
+    echo '<pre>';
+    var_export($customer);
+    if (is_object($customer) && method_exists($customer, '__toArray')) {
+      $result = $customer->__toArray();
+    } else {
+      $result = $customer;
+    }
+    return new JsonModel($result);
+  }
 
   public function processCardAction() {
     /** @var Request $request */

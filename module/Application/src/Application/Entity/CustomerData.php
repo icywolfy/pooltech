@@ -2,7 +2,9 @@
 namespace Application\Entity;
 
 
-class CustomerData {
+class CustomerData
+{
+  private $id;
   private $fullName;
   private $address1;
   private $address2;
@@ -12,11 +14,88 @@ class CustomerData {
   private $phone;
   private $email;
 
+  private $promo;
+  private $product;
+  private $stripeId;
+
 
   /**
    * @return mixed
    */
-  public function getEmail() {
+  public function getId()
+  {
+    return $this->id;
+  }
+
+
+  /**
+   * @param mixed $id
+   */
+  public function setId($id)
+  {
+    $this->id = $id;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getPromo()
+  {
+    return $this->promo;
+  }
+
+
+  /**
+   * @param mixed $promo
+   */
+  public function setPromo($promo)
+  {
+    $this->promo = $promo;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getProduct()
+  {
+    return $this->product;
+  }
+
+
+  /**
+   * @param mixed $product
+   */
+  public function setProduct($product)
+  {
+    $this->product = $product;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getStripeId()
+  {
+    return $this->stripeId;
+  }
+
+
+  /**
+   * @param mixed $stripeId
+   */
+  public function setStripeId($stripeId)
+  {
+    $this->stripeId = $stripeId;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getEmail()
+  {
     return $this->email;
   }
 
@@ -24,7 +103,8 @@ class CustomerData {
   /**
    * @param mixed $email
    */
-  public function setEmail($email) {
+  public function setEmail($email)
+  {
     $this->email = $email;
   }
 
@@ -32,7 +112,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getPhone() {
+  public function getPhone()
+  {
     return $this->phone;
   }
 
@@ -40,7 +121,8 @@ class CustomerData {
   /**
    * @param mixed $phone
    */
-  public function setPhone($phone) {
+  public function setPhone($phone)
+  {
     $this->phone = $phone;
   }
 
@@ -48,7 +130,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getZip() {
+  public function getZip()
+  {
     return $this->zip;
   }
 
@@ -56,7 +139,8 @@ class CustomerData {
   /**
    * @param mixed $zip
    */
-  public function setZip($zip) {
+  public function setZip($zip)
+  {
     $this->zip = $zip;
   }
 
@@ -64,7 +148,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getState() {
+  public function getState()
+  {
     return $this->state;
   }
 
@@ -72,7 +157,8 @@ class CustomerData {
   /**
    * @param mixed $state
    */
-  public function setState($state) {
+  public function setState($state)
+  {
     $this->state = $state;
   }
 
@@ -80,7 +166,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getCity() {
+  public function getCity()
+  {
     return $this->city;
   }
 
@@ -88,7 +175,8 @@ class CustomerData {
   /**
    * @param mixed $city
    */
-  public function setCity($city) {
+  public function setCity($city)
+  {
     $this->city = $city;
   }
 
@@ -96,7 +184,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getAddress2() {
+  public function getAddress2()
+  {
     return $this->address2;
   }
 
@@ -104,7 +193,8 @@ class CustomerData {
   /**
    * @param mixed $address2
    */
-  public function setAddress2($address2) {
+  public function setAddress2($address2)
+  {
     $this->address2 = $address2;
   }
 
@@ -112,7 +202,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getAddress1() {
+  public function getAddress1()
+  {
     return $this->address1;
   }
 
@@ -120,7 +211,8 @@ class CustomerData {
   /**
    * @param mixed $address1
    */
-  public function setAddress1($address1) {
+  public function setAddress1($address1)
+  {
     $this->address1 = $address1;
   }
 
@@ -128,7 +220,8 @@ class CustomerData {
   /**
    * @return mixed
    */
-  public function getFullName() {
+  public function getFullName()
+  {
     return $this->fullName;
   }
 
@@ -136,7 +229,8 @@ class CustomerData {
   /**
    * @param mixed $fullName
    */
-  public function setFullName($fullName) {
+  public function setFullName($fullName)
+  {
     $this->fullName = $fullName;
   }
 

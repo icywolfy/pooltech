@@ -1,13 +1,22 @@
 <?php
 namespace Application;
 
+use Application\Entity\CustomerData;
 use Application\Entity\Transaction;
 use Stripe\Charge;
 use Stripe\Customer;
 
-class PaymentProcessor {
+class StripeProcessor {
+  public function fetchCustomer($customerId) {
+    try {
+      $customer = Customer::retrieve($customerId);
+    } catch(\Exception $e) {
+      return null;
+    }
 
-  private function createCustomerFromToken($cardToken, $email) {
+    return $customer;
+  }
+  private function createCustomerFromToken($cardToken, CustomerData $customer) {
     $customer = Customer::create(array(
       'source' => $cardToken,
       'description' => '',

@@ -1,149 +1,159 @@
 <?php
 namespace Application\Entity;
 
-class Transaction {
-  private $txnTime;
-  private $productCode;
-  private $promoCode;
+use DateTime;
+
+class Transaction
+{
+  private $id;
+  private $customerId;
+  private $stripeCustomerId;
+  private $stripeTransactionId;
+  const STATUS_SUCCESS = 'succeeded';
+  /** @var DateTime */
+  private $timestamp;
+  private $email;
+  private $status;
+  private $data;
   private $chargeAmount;
   private $chargeCurrency;
   private $chargeResult;
+  private $chargeDescription;
   private $testTransaction = false;
-  private $data;
-  private $description;
 
 
   /**
    * @return mixed
    */
-  public function getDescription() {
-    return $this->description;
+  public function getId()
+  {
+    return $this->id;
   }
 
 
   /**
-   * @param mixed $description
+   * @param mixed $id
    */
-  public function setDescription($description) {
-    $this->description = $description;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getTxnTime() {
-    return $this->txnTime;
-  }
-
-
-  /**
-   * @param mixed $txnTime
-   */
-  public function setTxnTime($txnTime) {
-    $this->txnTime = $txnTime;
+  public function setId($id)
+  {
+    $this->id = $id;
   }
 
 
   /**
    * @return mixed
    */
-  public function getProductCode() {
-    return $this->productCode;
+  public function getCustomerId()
+  {
+    return $this->customerId;
   }
 
 
   /**
-   * @param mixed $productCode
+   * @param mixed $customerId
    */
-  public function setProductCode($productCode) {
-    $this->productCode = $productCode;
-  }
-
-
-  /**
-   * @return mixed
-   */
-  public function getPromoCode() {
-    return $this->promoCode;
-  }
-
-
-  /**
-   * @param mixed $promoCode
-   */
-  public function setPromoCode($promoCode) {
-    $this->promoCode = $promoCode;
+  public function setCustomerId($customerId)
+  {
+    $this->customerId = $customerId;
   }
 
 
   /**
    * @return mixed
    */
-  public function getChargeAmount() {
-    return $this->chargeAmount;
+  public function getStripeCustomerId()
+  {
+    return $this->stripeCustomerId;
   }
 
 
   /**
-   * @param mixed $chargeAmount
+   * @param mixed $stripeCustomerId
    */
-  public function setChargeAmount($chargeAmount) {
-    $this->chargeAmount = $chargeAmount;
-  }
-
-
-  /**
-   * @return mixed
-   */
-  public function getChargeCurrency() {
-    return $this->chargeCurrency;
-  }
-
-
-  /**
-   * @param mixed $chargeCurrency
-   */
-  public function setChargeCurrency($chargeCurrency) {
-    $this->chargeCurrency = $chargeCurrency;
+  public function setStripeCustomerId($stripeCustomerId)
+  {
+    $this->stripeCustomerId = $stripeCustomerId;
   }
 
 
   /**
    * @return mixed
    */
-  public function getChargeResult() {
-    return $this->chargeResult;
+  public function getStripeTransactionId()
+  {
+    return $this->stripeTransactionId;
   }
 
 
   /**
-   * @param mixed $chargeResult
+   * @param mixed $stripeTransactionId
    */
-  public function setChargeResult($chargeResult) {
-    $this->chargeResult = $chargeResult;
+  public function setStripeTransactionId($stripeTransactionId)
+  {
+    $this->stripeTransactionId = $stripeTransactionId;
   }
 
 
   /**
-   * @return boolean
+   * @return DateTime
+   *
    */
-  public function isTestTransaction() {
-    return $this->testTransaction;
+  public function getTimestamp()
+  {
+    return $this->timestamp;
   }
 
 
   /**
-   * @param boolean $testTransaction
+   * @param DateTime $timestamp
    */
-  public function setTestTransaction($testTransaction) {
-    $this->testTransaction = $testTransaction;
+  public function setTimestamp($timestamp=null)
+  {
+    $this->timestamp = $timestamp;
   }
 
 
   /**
    * @return mixed
    */
-  public function getData() {
+  public function getEmail()
+  {
+    return $this->email;
+  }
+
+
+  /**
+   * @param mixed $email
+   */
+  public function setEmail($email)
+  {
+    $this->email = $email;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getStatus()
+  {
+    return $this->status;
+  }
+
+
+  /**
+   * @param mixed $status
+   */
+  public function setStatus($status)
+  {
+    $this->status = $status;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getData()
+  {
     return $this->data;
   }
 
@@ -151,8 +161,101 @@ class Transaction {
   /**
    * @param mixed $data
    */
-  public function setData($data) {
+  public function setData($data)
+  {
     $this->data = $data;
   }
 
+
+  /**
+   * @return mixed
+   */
+  public function getChargeAmount()
+  {
+    return $this->chargeAmount;
+  }
+
+
+  /**
+   * @param mixed $chargeAmount
+   */
+  public function setChargeAmount($chargeAmount)
+  {
+    $this->chargeAmount = $chargeAmount;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getChargeCurrency()
+  {
+    return $this->chargeCurrency;
+  }
+
+
+  /**
+   * @param mixed $chargeCurrency
+   */
+  public function setChargeCurrency($chargeCurrency)
+  {
+    $this->chargeCurrency = $chargeCurrency;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getChargeResult()
+  {
+    return $this->chargeResult;
+  }
+
+
+  /**
+   * @param mixed $chargeResult
+   */
+  public function setChargeResult($chargeResult)
+  {
+    $this->chargeResult = $chargeResult;
+  }
+
+
+  /**
+   * @return mixed
+   */
+  public function getChargeDescription()
+  {
+    return $this->chargeDescription;
+  }
+
+
+  /**
+   * @param mixed $chargeDescription
+   */
+  public function setChargeDescription($chargeDescription)
+  {
+    $this->chargeDescription = $chargeDescription;
+  }
+
+
+  /**
+   * @return boolean
+   */
+  public function isTestTransaction()
+  {
+    return $this->testTransaction;
+  }
+
+
+  /**
+   * @param boolean $testTransaction
+   */
+  public function setTestTransaction($testTransaction)
+  {
+    $this->testTransaction = $testTransaction;
+  }
+  public function isSuccess() {
+    return $this->getStatus() === self::STATUS_SUCCESS;
+  }
 }
